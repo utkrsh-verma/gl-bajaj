@@ -1,0 +1,214 @@
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #121212, #1a1a1a);
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+/* Glassmorphism and container styles */
+main {
+    flex-grow: 1;
+    padding: 2rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* Hero Section */
+.hero-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero-section h1 {
+    font-size: 2.75rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    color: #00d8ff;
+}
+
+.hero-section h1 span {
+    animation: rocketShake 2s infinite;
+    display: inline-block;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #bbb;
+}
+
+.launching-btn {
+    background: linear-gradient(135deg, #00d8ff 0%, #006bb3 100%);
+    border: none;
+    padding: 0.8rem 2rem;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    cursor: not-allowed;
+    opacity: 0.75;
+    box-shadow: 0 6px 15px rgba(0, 216, 255, 0.5);
+    transition: background 0.3s ease;
+}
+
+/* Features Section */
+.features-section {
+    animation: fadeInUp 1.3s ease forwards;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 2rem;
+    color: #00d8ff;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.feature-card:focus,
+.feature-card:hover {
+    box-shadow: 0 0 15px #00d8ff;
+    transform: translateY(-8px);
+    outline: none;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #00d8ff;
+}
+
+.feature-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Coming Soon Section */
+.coming-soon-section {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #bbb;
+    animation: fadeInUp 1.6s ease forwards;
+}
+
+/* Stay Connected Section */
+.stay-connected-section {
+    text-align: center;
+    margin-top: 2rem;
+    animation: fadeInUp 1.9s ease forwards;
+}
+
+.stay-connected-section p {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+}
+
+.telegram-btn {
+    background: #0088cc;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.9rem 2rem;
+    border-radius: 40px;
+    box-shadow: 0 5px 15px rgba(0, 136, 204, 0.6);
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    user-select: none;
+}
+
+.telegram-btn:hover,
+.telegram-btn:focus {
+    background: #00aaff;
+    transform: scale(1.05);
+    outline: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: #555;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    background: linear-gradient(to top, #121212, transparent);
+    user-select: none;
+}
+
+footer .heart {
+    color: #ff3860;
+    font-weight: 900;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rocketShake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    50% { transform: rotate(15deg); }
+    75% { transform: rotate(-10deg); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+}
